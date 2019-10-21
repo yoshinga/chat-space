@@ -11,10 +11,10 @@
 - belongs_to :user_id
 
 
-## user_idテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, primary_key: true, add_index:true|
 
 ### Association
 - has_many :group_users
@@ -23,10 +23,10 @@
 - has_many :bodys
 
 
-## group_idテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|group_id|integer|unique: true|
 
 ### Association
 - has_to :group_users
@@ -36,7 +36,7 @@
 ## bodyテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, foreign_key: true|
+|body|text|foreign_key: true|
 
 ### Association
 - belongs_to :user_id
@@ -45,7 +45,7 @@
 ## imageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false, foreign_key: true|
+|image|string|foreign_key: true|
 
 ### Association
 - belongs_to :user_id
