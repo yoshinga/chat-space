@@ -14,7 +14,7 @@
 ## usersテーブル
 |name|Type|Options|
 |------|----|-------|
-|name|integer|null: false, primary_key: true, add_index:true|
+|name|character|null: false, primary_key: true, add_index:true, foreign_key: true|
 
 ### Association
 - has_many :group_users
@@ -24,7 +24,7 @@
 ## groupsテーブル
 |name|Type|Options|
 |------|----|-------|
-|name|integer|unique:true|
+|name|character|unique:true, null:fulse, foreign_key: true|
 
 ### Association
 - has_many :group_users
@@ -35,8 +35,8 @@
 ## messagesテーブル
 |name|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|foreign_key: true|
+|body|text||
+|image|string||
 
 ### Association
 - belongs_to :group
