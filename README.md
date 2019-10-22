@@ -1,52 +1,45 @@
 # README
 
 ## groups_usersテーブル
-|Column|Type|Options|
+|name|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group_id
-- belongs_to :user_id
+- belongs_to :group
+- belongs_to :user
 
 
-## userテーブル
-|Column|Type|Options|
+## usersテーブル
+|name|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, primary_key: true, add_index:true|
+|name|character|null: false, primary_key: true, add_index:true, foreign_key: true|
 
 ### Association
 - has_many :group_users
-- has_many :group_id, through: :group_users
-- has_many :images
-- has_many :bodys
+- has_many :groups, through: :group_users
+- has_many :messages
 
-
-## groupテーブル
-|Column|Type|Options|
+## groupsテーブル
+|name|Type|Options|
 |------|----|-------|
-|group_id|integer|unique: true|
+|name|character|unique:true, null:fulse, foreign_key: true|
 
 ### Association
-- has_to :group_users
-- has_to :user_id, through: :group_users
+- has_many :group_users
+- has_many :users, through: :group_users
+- has_many :messages
 
 
-## bodyテーブル
-|Column|Type|Options|
+## messagesテーブル
+|name|Type|Options|
 |------|----|-------|
-|body|text|foreign_key: true|
+|body|text||
+|image|string||
+|group_id|integer|null: false,foreign_key: true|
+|user_id|integer|null: false,foreign_key: true|
 
 ### Association
-- belongs_to :user_id
-
-
-## imageテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|foreign_key: true|
-
-### Association
-- belongs_to :user_id
-
+- belongs_to :group
+- belongs_to :user
