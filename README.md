@@ -11,34 +11,33 @@
 - belongs_to :user
 
 
-## userテーブル
+## usersテーブル
 |name|Type|Options|
 |------|----|-------|
-|user|integer|null: false, primary_key: true, add_index:true|
+|name|integer|null: false, primary_key: true, add_index:true|
 
 ### Association
 - has_many :group_users
 - has_many :groups, through: :group_users
+- has_many :messages
 
-
-## groupテーブル
+## groupsテーブル
 |name|Type|Options|
 |------|----|-------|
+|name|integer|unique:true|
 
 ### Association
 - has_many :group_users
 - has_many :users, through: :group_users
+- has_many :messages
 
 
-
-
-
-## messageテーブル
+## messagesテーブル
 |name|Type|Options|
 |------|----|-------|
-|body|text|foreign_key: true|
+|body|text|null: false|
 |image|string|foreign_key: true|
 
 ### Association
-- belongs_to :group_users
-- has_many :groups, through: :group_users
+- belongs_to :groups
+- belongs_to :users
