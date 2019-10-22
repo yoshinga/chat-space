@@ -40,5 +40,5 @@
 |image|string|foreign_key: true|
 
 ### Association
-- has_many :group_users
+- belongs_to :group_users
 - has_many :groups, through: :group_users
