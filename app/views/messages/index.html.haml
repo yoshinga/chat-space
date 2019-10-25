@@ -1,0 +1,40 @@
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        .side-header__box__user-neme
+          sample
+        .side-header__box__menu
+          = fa_icon 'edit'
+          %i.fa.fa-cog
+    .groups
+      .group
+        .group__group-name
+          group_name
+        .group__latest-message
+          test_messege
+  .chat-mein
+    .main-header
+      .mein-header__left-box
+        .mein-header__left-box__current-group
+          group_name
+        .mein-header__left-box__member-list
+          Mamber:yoshinaga
+      .main-header__edit-btn
+        Edit
+    .messages
+      .message
+        .message__upper-info__talker
+          hogehoge
+          .message__upper-info__date
+            2019/10/24(Thu)13:15:15
+        .message__text
+          hoge
+
+    .form
+      %form#new_message.new_message
+        .input-box
+          %input#message_content.input-box__text{placeholder: "type a message", name: "message[content]", type: "text"}
+          %label.input-box__image
+            %i.fa.fa-image
+        %input.submit-btn{type: "submit", name: "commit", value: "Send"}
