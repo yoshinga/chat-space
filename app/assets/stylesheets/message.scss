@@ -83,14 +83,12 @@ $content_max: 100%;
     height: 1000px;
     width: 100% - 300;
     background-color: #fafafa;
-    // margin-left: 300px;
     overflow: scroll;
     .main-header{
       height: 100px;
       width: 100% - 11%;
       background-color: $white;
       border-bottom: solid 1px #eee;
-      // position: fixed;
       padding-right: 40px;
       padding-left: 40px;
       justify-content: space-between;
@@ -98,7 +96,6 @@ $content_max: 100%;
       .mein-header__left-box{
         margin-top: 35px;
         margin-right: 0px;
-        // width: $content_max;
         height:66px;
         width: 200px;
         display: inline-block;
@@ -132,18 +129,15 @@ $content_max: 100%;
       margin-top: 100px;
       padding: 46px 40px 46px 40px;
       .message{
-        // background-color: #987;
           height:65px;
           width: 611px;
           margin-bottom: 40px;
         .message__upper-info__talker{
-          // background-color:purple;
           width: 171px;
           height: 24px;
           font-weight: bold;
         }
         .message__upper-info__date{
-          // background-color:sienna;
           width: 162px;
           height: 24px;
           font-size: 12px;
@@ -152,7 +146,6 @@ $content_max: 100%;
           margin-left: 10px;
         }
         .message__text{
-          // background-color: palegoldenrod;
           width: 611px;
           height: 21px;
           margin-top: 10px;
@@ -164,10 +157,8 @@ $content_max: 100%;
       background-color: #DDDDDD;
       height: 90px;
       width: 100vw;
-      // position: absolute;
       bottom: 0;
       position: fixed;
-      // float: right;
       .new_message{
         // width: calc( 93% + 38px ) ;
         width: 1100px;
@@ -193,7 +184,6 @@ $content_max: 100%;
           &__image{
             position: absolute;
             right: 10px;
-            // background-color: red;
             width:23px;
             height: 30px;
             display: inline-block;
