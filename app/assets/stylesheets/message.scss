@@ -2,38 +2,20 @@
 $full: 100vw;
 $full_view: $full - 300;
 $content_max: 100%;
-// .input-box, .input-btn{
-//   float:left;
-// }
-// .chat-side, .chat-main{
-//   float: left;
-// }
-// .message__upper-info__talker, .message__upper-info__date{
-//   display: flex;
-// }
-// .input-box__imege, .input-box__text{
-//   float: left;
-// } 
+
 html {
   height: 100%;
   width: 100%;
-  // background-color: black;
   body{
     width: 100%;
     height: 100%;
-    // background-color: yellow;
   }
 }
 .wrapper{
-  // background-color: red;
   height: 100%;
   width: 100%;
-  // position: relative;
-  // margin-bottom: 120px;
   box-sizing: border-box;
-  // padding-bottom: 0;
   display: flex;
-  // display: inline;
   float: left;
   .chat-side{
     width: 300px;
@@ -47,15 +29,12 @@ html {
       padding-right: 20px;
       padding-left: 20px;
       background-color: #253141 ;
-      // position: fixed;
       display: inline-block;
 
     
       
       &__box{
         color:$white;
-        // width: 260px;
-        // height: 24px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -83,11 +62,6 @@ html {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
-    // position:absolute;
-    // top: 0px;
-    // position: fixed;
-    // margin-top: 100px;
-    // color:$white;
     .group{
       font-size: 18px;
       margin-bottom:40px;
@@ -112,13 +86,10 @@ html {
   .chat-main{
     height: 100%;
     width: calc(100% - 300px);
-    // background-color: yellow;
     .main-header{
-      // background-color: red;
       height: 100px;
       width: calc(100% - 380px);
       display: inline-block;
-      // width: calc( 100% - 50px ) ;
       background-color: $white;
       border-bottom: solid 1px #eee;
       padding-right: 40px;
@@ -162,12 +133,9 @@ html {
       background-color:#fafafa;
       width:calc( 100vw - 300px);
       height:calc( 100vh - 286px);
-      // float: right;
       display: inline-block;
       overflow: scroll;
       
-      // height: 100%;
-      // background-color: red;
       margin-top: 100px;
       padding: 46px 40px 46px 40px;
       .message{
@@ -175,8 +143,6 @@ html {
         width: 611px;
         margin-bottom: 40px;
         .message__upper-info__talker{
-          // width: 171px;
-          // height: 24px;
           font-weight: bold;
           display: inline;
         }
@@ -204,19 +170,9 @@ html {
       padding-left: 40px;
       padding-top: 20px;
       padding-bottom: 20px;
-      // bottom: 0;
-      // position: fixed;
-      // float: left;
       .new_message{
         width: calc( 100%);
-        // width: 1100px;
         height:100%;
-        // margin: 20px 0 0 40px;
-        // position: relative;
-        // display: inline;
-        // line-height: 50px;
-        // position: absolute; 
-        // right: 170px;
         display: flex;
         justify-content: space-between;
         
@@ -226,19 +182,14 @@ html {
           height: 100%;
           padding-left: 10px;
           padding-right: 35px;
-          // float: left;
         }
         .form__mask{
           display: inline;
-          // width: 22px;
-          // height: 24px;
-          // background-color: red;
           .form__mask__image{
             position: absolute;
             right: 180px;
             width:23px;
             height: 30px;
-            // display: inline-block;
             color:black;
             line-height: 50px;
             font-size: 1.3em;
