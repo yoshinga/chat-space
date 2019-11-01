@@ -35,9 +35,10 @@ $(function() {
     .done(function(data){
       let html = buildMessage(data);
       $(".messages").append(html);
-      $(".form__message").val('');
       $('.form__submit').prop('disabled', false);
       $(".messages").animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
+      $(".form__message").val('');
+      $(".form__message")[0].reset();
     })
   });
 });
