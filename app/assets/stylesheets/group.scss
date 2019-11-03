@@ -92,6 +92,7 @@ li {
   }
   &__name {
     float: left;
+    display: inline;
   }
   &__btn {
     float: right;
@@ -104,4 +105,18 @@ li {
       color: #f05050;
     }
   }
+}
+
+// .ChatMember__remove{
+//   color: #f05050;
+// }
+.ChatMember__name {
+  float: left;
+  display: inline;
+}
+
+.ChatMember__button{
+  color: #f05050;
+  cursor: pointer;
+  float: right
 }
