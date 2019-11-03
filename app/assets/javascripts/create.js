@@ -1,5 +1,5 @@
-$(function() {
 
+$(function() {
   function buildMessage(message){
     let html = `<div class="message">
                   <div class="message__upper-info__talker">
