@@ -16,7 +16,6 @@ $(function() {
                       <img src = '${message.image}'>
                     </p>
                     </div>`
-        console.log(message.image)
     return html;
 
     }else{
