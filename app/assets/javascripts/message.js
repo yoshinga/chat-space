@@ -1,6 +1,6 @@
 $(function() {
   function buildMessage(message){
-    if (message.image){
+    if (message.image !== 0){
       let html = `<div class="message" data-id="${message.id}">
                   <div class="message__upper-info__talker">
                     ${ message.user_name }
