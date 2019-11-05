@@ -1,6 +1,6 @@
 $(function() {
   function buildMessage(message){
-    if (message.image !== 0){
+    image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
       let html = `<div class="message" data-id="${message.id}">
                   <div class="message__upper-info__talker">
                     ${ message.user_name }
@@ -17,25 +17,6 @@ $(function() {
                     </p>
                     </div>`
     return html;
-
-    }else{
-      let html = `<div class="message" data-id="${message.id}">
-                  <div class="message__upper-info__talker">
-                    ${ message.user_name }
-                      <div class="message__upper-info__date">
-                        ${message.created_at}            
-                      </div>
-                  </div>
-                  <div class="message__text">
-                    <p class="lower-message__content">
-                      ${message.content}                     
-                    </p>
-                    </div>`
-
-    return html;
-
-    }
-    
     
   }
   $('#new_message').on("submit", function(e) {
