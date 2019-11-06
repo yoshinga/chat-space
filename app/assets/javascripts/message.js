@@ -13,11 +13,10 @@ $(function() {
                       ${message.content}
                       </p>
                       <p>
-                      <img src = '${message.image}'>
+                      ${image}
                     </p>
                     </div>`
     return html;
-
   }
   $('#new_message').on("submit", function(e) {
     e.preventDefault();
@@ -57,6 +56,7 @@ $(function() {
     })
     
     .done(function(messages){
+      console.log(messages)
       
       let insertHTML = '';
       messages.forEach(function(message) {

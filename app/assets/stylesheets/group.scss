@@ -108,11 +108,22 @@ li {
 }
 .ChatMember__name {
   float: left;
-  display: inline;
+  display: inline-block;
+  width: calc(100% - 32px);
 }
 
 .ChatMember__button{
   color: #f05050;
   cursor: pointer;
   float: right
+}
+
+.chat-group-user__name{
+  width: calc(100% - 32px);
+}
+.ChatMember{
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
 }
