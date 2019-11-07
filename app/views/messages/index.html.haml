@@ -6,8 +6,9 @@
         .mein-header__left-box__current-group
           =@group.name
         .mein-header__left-box__member-list
-          Mamber:
-          =current_user.name
+          Member:
+          - @group.users.each do |user|
+            =user.name
       .main-header__edit-btn
         = link_to 'Edit', edit_group_path(@group)
     .messages{data:{"group": "#{@group.id}"}}

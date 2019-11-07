@@ -56,15 +56,14 @@ $(function() {
     })
     
     .done(function(messages){
-      console.log(messages)
       
       let insertHTML = '';
       messages.forEach(function(message) {
         insertHTML = buildMessage(message)
         $(".messages").append(insertHTML);
+        $(".messages").animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
         
       })
-      $(".messages").animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
       
     })
     .fail(function(){
@@ -75,7 +74,7 @@ $(function() {
   group_id = $('.messages').data('group');
   let url = `http://localhost:3000/groups/${group_id}/messages`;
   
-  if(location_url == url ){
+  if(location_url == url){
     setInterval(reloadMessages, 5000);
 }else{  
   return false;
