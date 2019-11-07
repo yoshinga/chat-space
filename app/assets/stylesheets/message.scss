@@ -90,14 +90,13 @@ html {
     width: calc(100% - 300px);
     .main-header{
       height: 100px;
-      width: calc(100% - 380px);
+      width: calc(100% - 80px);
       display: inline-block;
       background-color: $white;
       border-bottom: solid 1px #eee;
       padding-right: 40px;
       padding-left: 40px;
       justify-content: space-between;
-      position: fixed;
       .mein-header__left-box{
         margin-top: 35px;
         margin-right: 0px;
@@ -134,7 +133,6 @@ html {
       display: inline-block;
       overflow: scroll;
       
-      margin-top: 100px;
       padding: 46px 40px 46px 40px;
       .message{
         margin-bottom: 40px;
