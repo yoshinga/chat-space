@@ -21,7 +21,6 @@ $(function() {
   function addDeleteUser(name, id) {
     let html = `
     <div class="chat-group-user clearfix js-chat-member" id="${id}">
-<input name="group[user_ids][]" type="hidden" value="10">
 <p class="chat-group-user__name">
 ${name}
 </p>
