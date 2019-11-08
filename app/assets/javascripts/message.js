@@ -44,40 +44,38 @@ $(function() {
   });
 
   let reloadMessages = function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
 
-    
-    last_message_id = $('.message:last').data('id');
-    
-    $.ajax({
-      url:'api/messages',
-      type:"get",
-      dataType:'json',
-      data:{id: last_message_id}
-    })
-    
-    .done(function(messages){
-      
-      let insertHTML = '';
-      messages.forEach(function(message) {
-        insertHTML = buildMessage(message)
-        $(".messages").append(insertHTML);
-        $(".messages").animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
+      last_message_id = $('.message:last').data('id');
+      $.ajax({
+        url: 'api/messages',
+        type:"get",
+        dataType:'json',
+        data:{id: last_message_id}
+      })
+      .done(function(messages){
+        let insertHTML = '';
+        messages.forEach(function(message) {
+          insertHTML = buildMessage(message)
+          $(".messages").append(insertHTML);
+          $(".messages").animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
+          
+        })
         
       })
-      
-    })
-    .fail(function(){
-      alert('通信エラー')
-    });
+      .fail(function(){
+        alert('通信エラー')
+      });
+    };
   };
-  let location_url = location.href;
-  group_id = $('.messages').data('group');
-  let url = `http://localhost:3000/groups/${group_id}/messages`;
-  
-  if(location_url == url){
+    // let location_url = location.href;
+    // group_id = $('.messages').data('group');
+    // let url = `http://localhost:3000/groups/${group_id}/messages`;
+    
+    // if(location_url == url){
     setInterval(reloadMessages, 5000);
-}else{  
-  return false;
-}
+// }else{  
+//   return false;
+// }
 });
 

@@ -1,8 +1,13 @@
 class GroupsController < ApplicationController
   
-  before_action :set_group, only: [:edit, :update]
+  before_action :set_group, only: [:edit, :update, :show]
   
   def index
+  end
+
+  def show
+    @message = Message.new
+    @messages = @group.messages.includes(:user)
   end
  
   def new

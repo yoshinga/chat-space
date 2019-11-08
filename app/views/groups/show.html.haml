@@ -1,0 +1,23 @@
+.wrapper
+  = render 'shared/side_bar'
+  .chat-main
+    .main-header
+      .mein-header__left-box
+        .mein-header__left-box__current-group
+          =@group.name
+        .mein-header__left-box__member-list
+          Member:
+          - @group.users.each do |user|
+            =user.name
+      .main-header__edit-btn
+        = link_to 'Edit', edit_group_path(@group)
+    .messages{data:{"group": "#{@group.id}"}}
+      = render partial: 'message', collection: @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
