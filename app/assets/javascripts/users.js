@@ -48,8 +48,6 @@ ${name}
     })
     .done(function(users) {
       $('#user-search-result').empty();
-
-      
       if (users.length !== 0) {
         users.forEach(function(users){
           addUser(users);
