@@ -1,32 +1,32 @@
 $(function() {
   function buildMessage(message){
-    image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
-      let html = `<div class="message" data-id="${message.id}">
-                  <div class="message__upper-info__talker">
-                    ${ message.user_name }
-                      <div class="message__upper-info__date">
-                        ${message.created_at}
-                      </div>
-                  </div>
-                  <div class="message__text">
-                    <p class="lower-message__content">
-                      ${message.content}
-                      </p>
-                      <p>
-                      ${image}
-                    </p>
-                    </div>`
+    var image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+    let html = `<div class="message" data-id="${message.id}">
+                <div class="message__upper-info__talker">
+                  ${ message.user_name }
+                    <div class="message__upper-info__date">
+                      ${message.created_at}
+                    </div>
+                </div>
+                <div class="message__text">
+                  <p class="lower-message__content">
+                    ${message.content}
+                  </p>
+                  <p>
+                    ${image}
+                  </p>
+                  </div>`;
     return html;
-  }
+  };
   $('#new_message').on("submit", function(e) {
     e.preventDefault();
-    let formData = new FormData(this)
+    let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
       type:'POST',
       url: url,
       data: formData,
-      datatype:  'json',
+      dataType: 'json',
       processData: false,
       contentType: false
     })
@@ -68,14 +68,6 @@ $(function() {
       });
     };
   };
-    // let location_url = location.href;
-    // group_id = $('.messages').data('group');
-    // let url = `http://localhost:3000/groups/${group_id}/messages`;
-    
-    // if(location_url == url){
     setInterval(reloadMessages, 5000);
-// }else{  
-//   return false;
-// }
 });
 
